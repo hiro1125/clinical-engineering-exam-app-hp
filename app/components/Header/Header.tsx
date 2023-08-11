@@ -6,10 +6,8 @@ type Props = {
 
 const Header: FC<Props> = ({ title }) => {
   return (
-    <div className='w-full text-center text-6xl items-center'>
-      <div className='fixed top-0 left-0 w-full bg-white text-black p-10 z-50'>
-        {title}
-      </div>
+    <div className='w-full text-4xl'>
+      <div className='text-black p-10'>{title}</div>
     </div>
   );
 };
