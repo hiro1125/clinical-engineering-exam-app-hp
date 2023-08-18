@@ -4,7 +4,7 @@ import Main from '@/app/components/Main/Main';
 export default function Home() {
   return (
     <main>
-      <Header title={'臨床工学技士国家試験アプリ'} />
+      <Header title={'臨床工学技士国家試験'} />
       <Main />
     </main>
   );
