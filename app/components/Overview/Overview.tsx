@@ -1,5 +1,6 @@
+'use client';
 import React from 'react';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/css';
 import testSelection from '../../Images/OverviewShow/test-selection-screen.jpg';
 import sectorSpecific from '../../Images/OverviewShow/sector-specific-screen.jpg';
@@ -12,16 +13,20 @@ import setup from '../../Images/OverviewShow/setup-screen.jpg';
 import problemNumber from '../../Images/OverviewShow/problem-number-setting-screen.jpg';
 import time from '../../Images/OverviewShow/time-setting-screen.jpg';
 import sound from '../../Images/OverviewShow/sound-setting-screen.jpg';
+import Image from 'next/image';
 
 const Overview = () => {
   const slideOptions = {
-    type: 'slide',
+    type: 'loop',
     height: '100%',
     pagination: false,
     autoplay: true,
     interval: 3000,
     pauseOnHover: false,
     resetProgress: false,
+    updateOnMove: true,
+    perPage: 4,
+    perMove: 1,
   };
 
   const IMAGE_LIST = [
@@ -72,11 +77,27 @@ const Overview = () => {
   ];
 
   return (
-    <div className='flex'>
+    <div className='w-full h-full'>
       <div className='w-1/2 flex flex-col ml-60'>
         <p className='text-7xl font-semibold mb-4'>主な画面</p>
         <p className='text-3xl'>主要機能を画面で直接ご覧ください。</p>
       </div>
+      <Splide hasTrack={false} aria-label='...' options={slideOptions}>
+        <SplideTrack className='flex items-center'>
+          {IMAGE_LIST.map((item, index) => {
+            return (
+              <SplideSlide key={index} className='flex justify-center'>
+                <Image
+                  src={item.src}
+                  alt={`${item.alt}の画像`}
+                  className='w-1/2'
+                />
+              </SplideSlide>
+            );
+          })}
+        </SplideTrack>
+        <div className='splide__arrows'></div>
+      </Splide>
     </div>
   );
 };
