@@ -1,3 +1,4 @@
+import Contact from '@/app/components/Contact/Contact';
 import Footer from '@/app/components/Footer/Footer';
 import Header from '@/app/components/Header/Header';
 import Main from '@/app/components/Main/Main';
@@ -9,6 +10,7 @@ export default function Home() {
       <Header title={'臨床工学技士国家試験'} />
       <Main />
       <Overview />
+      <Contact />
       <Footer />
     </main>
   );
