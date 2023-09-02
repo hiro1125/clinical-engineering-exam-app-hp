@@ -4,7 +4,7 @@ import topScreen from '/app/Images/top-screen.jpg';
 
 const Main = () => {
   return (
-    <div className='flex items-center justify-center'>
+    <div className='flex items-center justify-center mt-10'>
       <div className='flex'>
         <Image src={topScreen} width={700} height={700} alt='top-screen' />
         <div className='w-1/2 flex flex-col items-center justify-center'>
