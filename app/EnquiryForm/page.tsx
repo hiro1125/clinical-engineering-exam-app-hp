@@ -106,9 +106,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-      <div className='w-full text-3xl bg-slate-300 text-center border-t absolute bottom-0'>
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 };
