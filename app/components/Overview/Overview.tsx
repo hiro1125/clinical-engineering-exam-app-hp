@@ -78,9 +78,11 @@ const Overview = () => {
 
   return (
     <div className='w-full h-full'>
-      <div className='w-1/2 flex flex-col ml-60 mb-10'>
-        <p className='text-7xl font-semibold mb-4'>主な画面</p>
-        <p className='text-3xl'>主要機能を画面で直接ご覧ください。</p>
+      <div className='lg:w-1/2 lg:flex flex-col lg:ml-60 lg:mb-10 lg:mt-0 mt-5 lg:text-left text-center'>
+        <p className='lg:text-7xl text-5xl font-semibold mb-4'>主な画面</p>
+        <p className='lg:text-3xl text-xl lg:mb-0 mb-4'>
+          主要機能を画面で直接ご覧ください。
+        </p>
       </div>
       <Splide hasTrack={false} aria-label='...' options={slideOptions}>
         <SplideTrack className='flex items-center'>
@@ -90,7 +92,7 @@ const Overview = () => {
                 <Image
                   src={item.src}
                   alt={`${item.alt}の画像`}
-                  className='w-1/2'
+                  className='lg:w-1/2 w-11/12'
                 />
               </SplideSlide>
             );
