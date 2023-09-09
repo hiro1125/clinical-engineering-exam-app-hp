@@ -35,18 +35,20 @@ const Contact = () => {
     <>
       <div className='w-full h-full'>
         <div className='flex flex-col items-center justify-center'>
-          <h2 className='text-4xl font-bold mt-32'>お問い合わせ</h2>
-          <p className='text-3xl font-bold justify-center mt-8'>
+          <h2 className='lg:text-4xl text-3xl font-bold lg:mt-32 mt-10'>
+            お問い合わせ
+          </h2>
+          <p className='lg:text-3xl text-2xl font-bold justify-center lg:mt-8 lg:m-0 m-6'>
             お問い合わせは、下記フォームよりご記入の上ご連絡ください。
           </p>
-          <p className='text-3xl font-bold mt-5'>
+          <p className='lg:text-3xl text-2xl font-bold mt-5'>
             <span className='text-red-500'>*</span>
             は、必須事項です。
           </p>
           <form
             ref={form}
             onSubmit={sendEmail}
-            className='font-bold text-lg my-10'
+            className='font-bold text-lg lg:m-9 m-5 '
           >
             <label htmlFor='mailTitleForm'>
               件名<span className='text-red-500'>*</span>
