@@ -107,7 +107,7 @@ const Contact = () => {
                         <Image
                           src={loadingIcon}
                           alt='回転画像'
-                          className='animate-spin h-10 w-10 mx-auto'
+                          className='animate-spin h-6 w-6 mx-auto'
                         />
                       </div>
                     </div>
