@@ -13,20 +13,21 @@ const Contact = () => {
 
   const sendEmail: ComponentProps<'form'>['onSubmit'] = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
 
-    try {
-      setIsLoading(true);
-      const result = await emailjs.sendForm(
-        `${process.env.NEXT_PUBLIC_USER_ID}`,
-        `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
-        event.currentTarget,
-        `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`
-      );
-      console.log('送信できました。', result.status, result.text);
-      setFinished(true);
-    } catch (error) {
-      alert('送信を完了できませんでした。\n通信環境などをお確かめください。');
-    }
+    // try {
+    //   setIsLoading(true);
+    //   const result = await emailjs.sendForm(
+    //     `${process.env.NEXT_PUBLIC_USER_ID}`,
+    //     `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
+    //     event.currentTarget,
+    //     `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`
+    //   );
+    //   console.log('送信できました。', result.status, result.text);
+    //   setFinished(true);
+    // } catch (error) {
+    //   alert('送信を完了できませんでした。\n通信環境などをお確かめください。');
+    // }
   };
 
   return (
@@ -74,7 +75,7 @@ const Contact = () => {
                 name='subject'
                 required
               />
-              <label htmlFor='mailForm'>
+              {/* <label htmlFor='mailForm'>
                 メールアドレス<span className='text-red-500'>*</span>
               </label>
               <input
@@ -84,7 +85,7 @@ const Contact = () => {
                 placeholder='例）example@gmail.com'
                 name='email'
                 required
-              />
+              /> */}
               <label htmlFor='mailContentForm'>
                 お問い合わせ内容<span className='text-red-500'>*</span>
               </label>
@@ -101,11 +102,18 @@ const Contact = () => {
                 className='mt-5 font-medium text-lg bg-blue-500 text-white py-2 px-4 rounded-full flex items-center transition duration-200 hover:bg-blue-600 active:scale-95'
               >
                 {isLoading ? (
-                  <Image
-                    src={loadingIcon}
-                    alt='回転画像'
-                    className='animate-spin h-10 w-10 mx-auto'
-                  />
+                  <>
+                    <div className='svg-wrapper-1'>
+                      <div className='svg-wrapper'>
+                        <Image
+                          src={loadingIcon}
+                          alt='回転画像'
+                          className='animate-spin h-10 w-10 mx-auto'
+                        />
+                      </div>
+                    </div>
+                    <span className='ml-2'>送信中・・・</span>
+                  </>
                 ) : (
                   <>
                     <div className='svg-wrapper-1'>
