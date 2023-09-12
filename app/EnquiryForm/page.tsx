@@ -101,7 +101,11 @@ const Contact = () => {
                 className='mt-5 font-medium text-lg bg-blue-500 text-white py-2 px-4 rounded-full flex items-center transition duration-200 hover:bg-blue-600 active:scale-95'
               >
                 {isLoading ? (
-                  <Image src={loadingIcon} alt='回転画像' className='' />
+                  <Image
+                    src={loadingIcon}
+                    alt='回転画像'
+                    className='animate-spin h-10 w-10 mx-auto'
+                  />
                 ) : (
                   <>
                     <div className='svg-wrapper-1'>
