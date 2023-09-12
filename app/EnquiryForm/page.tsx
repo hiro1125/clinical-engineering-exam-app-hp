@@ -13,21 +13,20 @@ const Contact = () => {
 
   const sendEmail: ComponentProps<'form'>['onSubmit'] = async (event) => {
     event.preventDefault();
-    setIsLoading(true);
 
-    // try {
-    //   setIsLoading(true);
-    //   const result = await emailjs.sendForm(
-    //     `${process.env.NEXT_PUBLIC_USER_ID}`,
-    //     `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
-    //     event.currentTarget,
-    //     `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`
-    //   );
-    //   console.log('送信できました。', result.status, result.text);
-    //   setFinished(true);
-    // } catch (error) {
-    //   alert('送信を完了できませんでした。\n通信環境などをお確かめください。');
-    // }
+    try {
+      setIsLoading(true);
+      const result = await emailjs.sendForm(
+        `${process.env.NEXT_PUBLIC_USER_ID}`,
+        `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
+        event.currentTarget,
+        `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`
+      );
+      console.log('送信できました。', result.status, result.text);
+      setFinished(true);
+    } catch (error) {
+      alert('送信を完了できませんでした。\n通信環境などをお確かめください。');
+    }
   };
 
   return (
@@ -75,7 +74,7 @@ const Contact = () => {
                 name='subject'
                 required
               />
-              {/* <label htmlFor='mailForm'>
+              <label htmlFor='mailForm'>
                 メールアドレス<span className='text-red-500'>*</span>
               </label>
               <input
@@ -85,7 +84,7 @@ const Contact = () => {
                 placeholder='例）example@gmail.com'
                 name='email'
                 required
-              /> */}
+              />
               <label htmlFor='mailContentForm'>
                 お問い合わせ内容<span className='text-red-500'>*</span>
               </label>
