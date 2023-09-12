@@ -30,10 +30,10 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <div className='w-full h-full'>
+    <div className='h-full'>
+      <div className='w-full flex flex-col h-screen justify-between items-start'>
         {isFinished ? (
-          <div className='flex flex-col items-center justify-center h-screen'>
+          <div className='flex flex-col items-center justify-center w-full h-full'>
             <div className='lg:text-3xl text-2xl font-bold text-center'>
               送信が完了しました。
             </div>
@@ -47,7 +47,7 @@ const Contact = () => {
             </button>
           </div>
         ) : (
-          <div className='flex flex-col items-center justify-center'>
+          <div className='flex flex-col items-center justify-center w-full'>
             <h2 className='lg:text-4xl text-3xl font-bold lg:mt-32 mt-10'>
               お問い合わせ
             </h2>
@@ -131,9 +131,9 @@ const Contact = () => {
             </form>
           </div>
         )}
+        <Footer />
       </div>
-      <Footer />
-    </>
+    </div>
   );
 };
 
