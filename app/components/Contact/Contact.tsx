@@ -3,7 +3,7 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <div className='flex flex-col justify-center items-center lg:mt-24'>
+    <div className='flex flex-col justify-center items-center lg:my-24'>
       <p className='lg:text-7xl text-5xl font-semibold mb-10 lg:mt-0 mt-10'>
         お問い合わせ
       </p>
