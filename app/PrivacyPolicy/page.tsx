@@ -1,5 +1,6 @@
 import Footer from '@/app/components/Footer/Footer';
 import Header from '@/app/components/Header/Header';
+import { TITLE_TEXT } from '@/app/contents';
 import Link from 'next/link';
 import React from 'react';
 
@@ -7,7 +8,7 @@ const PrivacyPolicy = () => {
   return (
     <>
       <Link href={'/'}>
-        <Header title={'臨床工学技士国家試験'} />
+        <Header title={TITLE_TEXT} />
       </Link>
       <div className='lg:p-4 lg:m-40 m-10 h-5/6'>
         <h1 className='text-3xl font-semibold lg:mb-8 text-center mt-32'>
